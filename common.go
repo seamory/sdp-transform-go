@@ -47,10 +47,11 @@ type SessionDescription struct {
 }
 
 type Ext struct {
-    Value     string  `json:"value"`
-    Direction *string `json:"direction,omitempty"`
-    URI       string  `json:"uri"`
-    Config    *string `json:"config,omitempty"`
+    Value      string  `json:"value"`
+    Direction  *string `json:"direction,omitempty"`
+    EncryptUri *string `json:"encrypt_uri,omitempty"`
+    URI        string  `json:"uri"`
+    Config     *string `json:"config,omitempty"`
 }
 
 type Fingerprint struct {
