@@ -203,10 +203,11 @@ type SimulcastStream struct {
     Paused bool   `json:"paused,omitempty"`
 }
 
-func ParseSimulcastStreamList(str string) []SimulcastStream {
+func ParseSimulcastStreamList(str string) [][]SimulcastStream {
     //  list1: '1,~4;2;3',
-    simulcasts := make([]SimulcastStream, 0)
+    list := make([][]SimulcastStream, 0)
     for _, stream := range strings.Split(str, ";") {
+        simulcasts := make([]SimulcastStream, 0)
         for _, format := range strings.Split(stream, ",") {
             var scid string
             var paused bool
@@ -221,6 +222,7 @@ func ParseSimulcastStreamList(str string) []SimulcastStream {
                 Paused: paused,
             })
         }
+        list = append(list, simulcasts)
     }
-    return simulcasts
+    return list
 }
