@@ -257,4 +257,6 @@ type SharedDescriptionFields struct {
 type MediaExtensionAttributes struct {
     IceOptions       *string `json:"iceOptions,omitempty"`
     ExtmapAllowMixed *string `json:"extmapAllowMixed,omitempty"`
+    SctpPort         *string `json:"sctpPort,omitempty"`
+    MaxMessageSize   *string `json:"maxMessageSize,omitempty"`
 }
