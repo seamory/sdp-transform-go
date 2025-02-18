@@ -25,6 +25,7 @@ type Media struct {
     Protocol string  `json:"protocol"`
     Payloads *string `json:"payloads,omitempty"`
     MediaDescription
+    MediaExtensionAttributes
 }
 
 // SessionDescription
@@ -250,4 +251,10 @@ type SharedDescriptionFields struct {
     Description *string      `json:"description,omitempty"`
     Connection  *Connection  `json:"connection,omitempty"`
     Bandwidth   []*Bandwidth `json:"bandwidth,omitempty"`
+}
+
+// MediaExtensionAttributes mediasoup used.
+type MediaExtensionAttributes struct {
+    IceOptions       *string `json:"iceOptions,omitempty"`
+    ExtmapAllowMixed *string `json:"extmapAllowMixed,omitempty"`
 }
