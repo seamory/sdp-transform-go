@@ -142,7 +142,7 @@ func ParseParams(str string) ParamMap {
             paramMap[s[0]] = nil
         }
     }
-    return ParamMap{}
+    return paramMap
 }
 
 var ParseFmtpConfig = ParseParams
